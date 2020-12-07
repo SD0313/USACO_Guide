@@ -23,11 +23,9 @@ public class BerryPicking {
             basks.add(Integer.parseInt(st.nextToken()));
         }
         Collections.sort(basks); Collections.reverse(basks);
-//        System.out.println(basks);
         toChange = new PriorityQueue<>(n, new NegSort());
         for (int i = 0; i < n; i++){
             toChange.add(basks.get(i));
-//            least = basks.get(i);
         }
         int maxB = toChange.peek();
         int maxleast = -1;
@@ -36,7 +34,6 @@ public class BerryPicking {
             maxleast = Math.max(maxleast, least);
         }
         out.println(maxleast);
-//        System.out.println(answer());
         f.close();out.close();
     }
     static int getLeast(int b, PriorityQueue<Integer> pq){
@@ -63,17 +60,6 @@ public class BerryPicking {
         }
         return kby2(buckets);
     }
-//    static int answer(){
-//        if (toChange.peek()/2 <= least){
-//            return kby2();
-//        }
-//        int next = toChange.remove();
-//        int n1 = next/2;
-//        int n2 = next-n1;
-//        toChange.add(n1); toChange.add(n2);
-//        least = n1;
-//        return answer();
-//    }
     static int kby2(ArrayList<Integer> arr){
         int sum = 0;
         for (int i = 0; i < k; i++){
