@@ -1,6 +1,6 @@
 import java.util.*; import java.io.*;
 public class BerryPicking {
-    static final String file = "berries";
+    static final String file = "io//berries";
     static List<Integer> basks = new ArrayList<>();
     static PriorityQueue<Integer> toChange = new PriorityQueue<>();
     static int n, k;
