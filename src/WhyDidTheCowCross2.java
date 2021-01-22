@@ -1,7 +1,7 @@
 import java.io.*; import java.util.*;
 
 public class WhyDidTheCowCross2 {
-    public static final String file = "io//maxcross";
+    public static final String file = "maxcross";
     public static void main(String[] args) throws IOException{
         BufferedReader f = new BufferedReader(new FileReader(file + ".in"));
         PrintWriter out = new PrintWriter(new FileWriter(file + ".out"));
@@ -45,18 +45,19 @@ public class WhyDidTheCowCross2 {
             }
 
         }
-        System.out.println(arr);
-        System.out.println(temp);
+//        System.out.println(Arrays.toString(lights));
+//        System.out.println(arr);
+//        System.out.println(temp);
         int[] num1 = new int[temp.size()];
-//        num1[0] = (temp.get(0) == 1) ? 1 : 0;
-//        for (int i = 1; i < arr.size(); i++){
-//            num1[i] = (temp.get(i) == 1) ? num1[i-1]+1 : num1[i-1];
-//        }
-        num1[0] = (arr.get(0) == 1) ? 1 : 0;
-        for (int i = 1; i < arr.size(); i++){
-            num1[i] = (arr.get(i) == 1) ? num1[i-1]+1 : num1[i-1];
+        num1[0] = (temp.get(0) == 1) ? 1 : 0;
+        for (int i = 1; i < temp.size(); i++){
+            num1[i] = (temp.get(i) == 1) ? num1[i-1]+1 : num1[i-1];
         }
-        System.out.println(Arrays.toString(num1));
+//        num1[0] = (arr.get(0) == 1) ? 1 : 0;
+//        for (int i = 1; i < arr.size(); i++){
+//            num1[i] = (arr.get(i) == 1) ? num1[i-1]+1 : num1[i-1];
+//        }
+//        System.out.println(Arrays.toString(num1));
         int answer = Integer.MAX_VALUE;
         int p1 = 0;
         int min_p1 = -1;
@@ -89,8 +90,10 @@ public class WhyDidTheCowCross2 {
                 p1++;
             }
         }
-        System.out.println(min_p1 + " " + map.get(min_p1));
-        System.out.println(toFix(num1, min_p1, map.get(min_p1)));
+//        System.out.println(num1.length);
+//        System.out.println(min_p1 + " " + map.get(min_p1));
+//        System.out.println(toFix(num1, min_p1, map.get(min_p1)));
+//        System.out.println(num1[min_p1] + " " + num1[map.get(min_p1)]);
         out.println(answer);
         f.close(); out.close();
     }
